@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Community Event Portal</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header id="mainHeader">
+
+        <!-- Inline CSS Example -->
+        <h1 style="color:red;">
+            Local Community Event Portal
+        </h1>
+
+        <p>
+            Connecting Residents with Community Activities
+        </p>
+
+    </header>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <ul>
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#events">Events</a></li>
+
+            <li><a href="#gallery">Gallery</a></li>
+
+            <li><a href="#registration">Register</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="help.html" target="_blank">
+                    Help
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- Home Section -->
+
+    <section id="home" class="eventCard">
+
+        <div id="welcomeBanner">
+
+            <h2>Welcome Residents!</h2>
+
+            <p class="highlight">
+                Participate in exciting local events and celebrations.
+            </p>
+
+            <p>
+                <span style="color:red; font-weight:bold;">
+                    Special Offer: Free entry for first 50 registrations!
+                </span>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Events Section -->
+
+    <section id="events" class="eventCard">
+
+        <h2>Upcoming Events</h2>
+
+        <div class="eventCard">
+
+            <h3>Music Festival</h3>
+
+            <p>
+                Enjoy live music performances from local artists.
+            </p>
+
+        </div>
+
+        <div class="eventCard">
+
+            <h3>Food Carnival</h3>
+
+            <p>
+                Taste delicious food from different cultures.
+            </p>
+
+        </div>
+
+        <div class="eventCard">
+
+            <h3>Sports Day</h3>
+
+            <p>
+                Participate in fun sports and fitness activities.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="eventCard">
+
+    <h2>Search Events</h2>
+
+    <input type="text"
+        id="searchBox"
+        placeholder="Search by event name">
+
+    <br><br>
+
+    <select id="categoryFilter">
+
+        <option value="">
+            Select Category
+        </option>
+
+        <option value="Music">
+            Music
+        </option>
+
+        <option value="Food">
+            Food
+        </option>
+
+        <option value="Sports">
+            Sports
+        </option>
+
+        <option value="Art">
+            Art
+        </option>
+
+    </select>
+
+    </section>
+
+    <section id="eventsContainer">
+
+    </section>
+
+    <!-- Gallery Section -->
+
+    <section id="gallery" class="eventCard">
+
+        <h2>Community Event Gallery</h2>
+
+        <table>
+
+            <tr>
+
+                <td>
+
+                    <img src="img1.jpg"
+                        alt="Music Event"
+                        title="Music Event"
+                        class="gallery-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Music Festival</p>
+
+                </td>
+
+                <td>
+
+                    <img src="img2.jpg"
+                        alt="Food Event"
+                        title="Food Event"
+                        class="gallery-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Food Carnival</p>
+
+                </td>
+
+                <td>
+
+                    <img src="img3.jpg"
+                        alt="Sports Event"
+                        title="Sports Event"
+                        class="gallery-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Sports Day</p>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+
+                    <img src="img4.jpg"
+                        alt="Dance Event"
+                        title="Dance Event"
+                        class="gallery-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Dance Show</p>
+
+                </td>
+
+                <td>
+
+                    <img src="img5.jpg"
+                        alt="Art Event"
+                        title="Art Event"
+                        class="gallery-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Art Exhibition</p>
+
+                </td>
+
+                <td>
+
+                    <img src="img6.jpg"
+                        alt="Book Event"
+                        title="Book Event"
+                        class="gallery-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Book Fair</p>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Registration Form -->
+
+    <section id="registration" class="eventCard">
+
+        <h2>Event Registration</h2>
+
+        <form id="eventForm">
+
+            <input type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+                autofocus>
+
+            <input type="email"
+                id="email"
+                placeholder="Enter your email"
+                required>
+
+            <input type="date" required>
+
+            <input type="text"
+                id="phone"
+                placeholder="Enter phone number"
+                onblur="validatePhone()">
+
+            <select id="eventType"
+                onchange="showFee()">
+
+                <option value="">
+                    Select Event
+                </option>
+
+                <option value="100">
+                    Music Festival - ₹100
+                </option>
+
+                <option value="200">
+                    Food Carnival - ₹200
+                </option>
+
+                <option value="150">
+                    Sports Day - ₹150
+                </option>
+
+            </select>
+
+            <p id="feeDisplay"></p>
+
+            <textarea id="feedback"
+                placeholder="Enter feedback"
+                onkeyup="countCharacters()"></textarea>
+
+            <p>
+                Characters:
+                <span id="charCount">0</span>
+            </p>
+
+            <button type="button"
+                class="cta-button"
+                onclick="submitForm()">
+
+                Submit Registration
+
+            </button>
+
+            <output id="outputMessage"></output>
+
+        </form>
+
+    </section>
+
+    <!-- Video Section -->
+
+    <section class="eventCard">
+
+        <h2>Event Promo Video</h2>
+
+        <video width="400"
+            controls
+            oncanplay="videoReady()">
+
+            <source src="event.mp4"
+                type="video/mp4">
+
+        </video>
+
+        <p id="videoMessage"></p>
+
+    </section>
+
+    <!-- News Section -->
+
+    <section class="newsArticle">
+
+        <h2>Community Bulletin</h2>
+
+        <p>
+
+            The city council is organizing several
+            exciting programs for residents this month.
+            Activities include music festivals, sports
+            competitions, educational workshops,
+            cultural celebrations, and art exhibitions.
+
+            Citizens are encouraged to participate
+            actively and support local talent.
+            These events aim to strengthen the
+            community spirit and encourage collaboration
+            among residents of all age groups.
+
+        </p>
+
+    </section>
+
+    <!-- Geolocation Section -->
+
+    <section class="eventCard">
+
+        <h2>Find Nearby Events</h2>
+
+        <button class="cta-button"
+            onclick="findLocation()">
+
+            Find Nearby Events
+
+        </button>
+
+        <p id="locationResult"></p>
+
+    </section>
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="eventCard">
+
+        <h2>Contact Us</h2>
+
+        <p class="highlight">
+            Email: support@communityportal.com
+        </p>
+
+        <p>
+            Phone: +91 9876543210
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Local Community Event Portal
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        // Phone Validation
+
+        function validatePhone() {
+
+            let phone =
+                document.getElementById("phone").value;
+
+            if (phone.length < 10) {
+
+                alert(
+                    "Phone number must contain at least 10 digits"
+                );
+            }
+        }
+
+        // Show Event Fee
+
+        function showFee() {
+
+            let fee =
+                document.getElementById("eventType").value;
+
+            document.getElementById("feeDisplay").innerHTML =
+                "Event Fee: ₹" + fee;
+
+            localStorage.setItem(
+                "preferredEvent",
+                fee
+            );
+        }
+
+        // Form Submit
+
+        function submitForm() {
+
+            document.getElementById("outputMessage").innerHTML =
+                "Registration Successful!";
+        }
+
+        // Double Click Image
+
+        function enlargeImage(img) {
+
+            img.style.width = "400px";
+
+            img.style.height = "300px";
+        }
+
+        // Character Counter
+
+        function countCharacters() {
+
+            let text =
+                document.getElementById("feedback").value;
+
+            document.getElementById("charCount").innerHTML =
+                text.length;
+        }
+
+        // Video Ready
+
+        function videoReady() {
+
+            document.getElementById("videoMessage").innerHTML =
+                "Video ready to play";
+        }
+
+        // Warning Before Leaving
+
+        window.onbeforeunload = function () {
+
+            return "Your form is not submitted!";
+        }
+
+        // Load Saved Event
+
+        window.onload = function () {
+
+            let saved =
+                localStorage.getItem("preferredEvent");
+
+            if (saved) {
+
+                document.getElementById("eventType").value =
+                    saved;
+            }
+        }
+
+        // Clear Storage
+
+        function clearPreferences() {
+
+            localStorage.clear();
+
+            sessionStorage.clear();
+
+            alert("Preferences Cleared");
+        }
+
+        // Geolocation
+
+        function findLocation() {
+
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(
+
+                    showPosition,
+
+                    showError,
+
+                    {
+                        enableHighAccuracy: true,
+
+                        timeout: 5000
+                    }
+                );
+
+            } else {
+
+                alert("Geolocation is not supported");
+            }
+        }
+
+        function showPosition(position) {
+
+            document.getElementById("locationResult").innerHTML =
+
+                "Latitude: " +
+                position.coords.latitude +
+
+                "<br>Longitude: " +
+                position.coords.longitude;
+        }
+
+        function showError(error) {
+
+            switch (error.code) {
+
+                case error.PERMISSION_DENIED:
+
+                    alert("Permission denied");
+
+                    break;
+
+                case error.TIMEOUT:
+
+                    alert("Request timeout");
+
+                    break;
+
+                default:
+
+                    alert("Location error");
+            }
+        }
+
+    </script>
+
+    <!-- Clear Preferences Button -->
+
+    <button class="cta-button"
+        onclick="clearPreferences()">
+
+        Clear Preferences
+
+    </button>
+
+    <script src="main.js"></script>
+    
+</body>
+
+</html>
